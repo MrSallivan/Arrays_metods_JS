@@ -23,10 +23,18 @@ document.querySelector('.b-1').onclick = f1
 let a2 = [4, 12, 4, 2, 15, 98];
 
 const f2 = () => {
-	// обратите внимание в массиве только ЧИСЛА!g('02');
-	//
+
+	let value = +document.querySelector('.i-2').value
+	let out = a2.indexOf(value)
+	if (out === -1) {
+		document.querySelector('.out-2').textContent = false
+	} else {
+		document.querySelector('.out-2').textContent = out
+	}
+
 }
 
+document.querySelector('.b-2').onclick = f2
 // TASK 03
 // По нажатию b-3 выполняется функция f3. Функция считывает значение из i-3 и с помощью indexOf и ищет данный элемент в массиве a3. Выводит в out-3  false, если такого элемента нет в массиве, и true если есть.
 // Как тестируется - ввожу числа и проверяю результат.
@@ -35,7 +43,18 @@ const f2 = () => {
 let a3 = [4, 12, 4, 2, 15, 98];
 
 const f3 = () => {
+
+	let value = +document.querySelector('.i-3').value
+	let out = a3.indexOf(value)
+	if (out === -1) {
+		document.querySelector('.out-3').textContent = false
+	} else {
+		document.querySelector('.out-3').textContent = true
+	}
+
 }
+
+document.querySelector('.b-3').onclick = f3
 
 // TASK 04
 // По нажатию b-4 выполняется функция f4. Функция принимает 2 параметра, первый - массив, второй элемент. Функция должна с помощью indexOf найти и вывести в out-4 индекс искомого элемента в массиве a4 или -1 если элемента в массиве нет. Протестируйте задачу на строке '2' и числе 2. Сделайте выводы.
@@ -44,7 +63,16 @@ const f3 = () => {
 let a4 = [1, '1', 2, '2', '3'];
 
 const f4 = (arr, elem) => {
+
+	let out = arr.indexOf(elem)
+	if (out === -1) {
+		document.querySelector('.out-4').textContent = -1
+	} else if (elem !== -1) {
+		document.querySelector('.out-4').innerHTML = out
+	}
 }
+
+document.querySelector('.b-4').onclick = f4(a4, 52)
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция считывает значение из i-5-1 и индекс с которого начинается поиск в массиве с i-5-2 и с помощью indexOf и ищет данный элемент в массиве a5 c позиции указанной в i-5-2. Выводит в out-5 индекс если он есть в массиве, или -1 если нет.
@@ -58,7 +86,19 @@ const f4 = (arr, elem) => {
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
+
+	let value = +document.querySelector('.i-5-1').value
+	let index = +document.querySelector('.i-5-2').value
+	console.log(index)
+	let out = a5.indexOf(value, index)
+	if (out === -1) {
+		document.querySelector('.out-5').textContent = -1
+	} else if (out !== -1) {
+		document.querySelector('.out-5').innerHTML = out
+	}
 }
+
+document.querySelector('.b-5').onclick = f5
 
 // TASK 06
 // По нажатию b-6 выполняется функция f6. Функция считывает значение из i-6 и с помощью indexOf и ищет данный элемент в СТРОКЕ a6. Выводит в out-6 результат поиска.
