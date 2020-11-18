@@ -142,7 +142,14 @@ let a8 = [1, 2, 3, 1, 3, 2, 55, 23, 53, 24, 55, 3, 1, 5, 2, 3, 5, 4, 6, 7, 12, 5
 let res08 = [];
 
 const f8 = () => {
-	// ваш код
+	res08 = []
+	let value = +document.querySelector('.i-8').value
+	for ( let i = 0 ; i < a8.length - 1 ; i++ ) {
+		if ( value === a8[i] ) {
+			res08.push(i)
+		}
+	}
+
 	document.querySelector('.out-8').innerHTML = res08;
 }
 
@@ -163,6 +170,15 @@ let a9 = [
 ];
 
 const f9 = () => {
+	let value = +document.querySelector('.i-9').value
+	let out = ''
+	for ( let i in a9) {
+		let match = a9[i].indexOf(value)
+		if ( match !== -1 ) {
+			out+= i + ' '
+		}
+	}
+	document.querySelector('.out-9').textContent = out
 }
 
 // TASK 10
@@ -177,6 +193,15 @@ const f9 = () => {
 let a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11];
 
 const f10 = (arr, elem) => {
+	let out = ''
+	for ( let i = 0 ; i < arr.length - 1 ; i++ ) {
+		if ( elem == arr[i] ) {
+			return out = i
+		} 
+	}
+	if ( out === '') {
+		return -1
+	}
 }
 
 
