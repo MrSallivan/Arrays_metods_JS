@@ -121,10 +121,10 @@ let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = (arr, elem) => {
 	for (let i = 0; i < arr.length; i++) {
-		if ( elem === arr[i] ) {
+		if (elem === arr[i]) {
 			document.querySelector('.out-7').innerHTML = i
 			break
-		} else if ( i == arr.length - 1 ) {
+		} else if (i == arr.length - 1) {
 			document.querySelector('.out-7').innerHTML = -1
 		}
 	}
@@ -139,13 +139,13 @@ const f7 = (arr, elem) => {
 
 
 let a8 = [1, 2, 3, 1, 3, 2, 55, 23, 53, 24, 55, 3, 1, 5, 2, 3, 5, 4, 6, 7, 12, 53];
-let res08 = [];
+
 
 const f8 = () => {
-	res08 = []
+	let res08 = []
 	let value = +document.querySelector('.i-8').value
-	for ( let i = 0 ; i < a8.length - 1 ; i++ ) {
-		if ( value === a8[i] ) {
+	for (let i = 0; i < a8.length - 1; i++) {
+		if (value === a8[i]) {
 			res08.push(i)
 		}
 	}
@@ -172,10 +172,10 @@ let a9 = [
 const f9 = () => {
 	let value = +document.querySelector('.i-9').value
 	let out = ''
-	for ( let i in a9) {
+	for (let i in a9) {
 		let match = a9[i].indexOf(value)
-		if ( match !== -1 ) {
-			out+= i + ' '
+		if (match !== -1) {
+			out += i + ' '
 		}
 	}
 	document.querySelector('.out-9').textContent = out
@@ -194,12 +194,12 @@ let a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11];
 
 const f10 = (arr, elem) => {
 	let out = ''
-	for ( let i = 0 ; i < arr.length - 1 ; i++ ) {
-		if ( elem == arr[i] ) {
+	for (let i = 0; i < arr.length - 1; i++) {
+		if (elem == arr[i]) {
 			return out = i
-		} 
+		}
 	}
-	if ( out === '') {
+	if (out === '') {
 		return -1
 	}
 }
