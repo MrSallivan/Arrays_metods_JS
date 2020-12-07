@@ -176,13 +176,13 @@ const a11 = [[1, 2], { a: 1 }, true, '', [1], Infinity, undefined, null];
 
 const f11 = () => {
 	let c = [1, 2];
-	// c = {a:1};
-	// c = true;
-	// c = '';
-	// c = [1];
-	// c = Infinity;
-	// c = undefined;
-	// c = null;
+	c = { a: 1 };
+	c = true;
+	c = '';
+	c = [1];
+	c = Infinity;
+	c = undefined;
+	c = null;
 	console.log(a11.includes(c));
 }
 
