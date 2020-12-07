@@ -1,3 +1,6 @@
+function inputNum(num) {
+	return document.querySelector(`.i-${num}`).value
+}
 // TASK 01
 // По нажатию b-1 выполняется функция f1. Функция считывает значение из i-1 и с помощью includes ищет данный элемент в массиве a1. Выводит в out-1 результат работы метода.
 // Как тестируется - ввожу числа и проверяю результат.
@@ -6,8 +9,7 @@
 let a1 = [4, 12, 4, 2, 15, 98];
 
 const f1 = () => {
-    // обратите внимание в массиве только ЧИСЛА!
-    //
+	document.querySelector('.out-1').innerHTML = a1.includes(+inputNum(1))
 }
 
 // TASK 02
@@ -18,7 +20,13 @@ const f1 = () => {
 let a2 = [4, 12, 4, 2, 15, 98];
 
 const f2 = () => {
-
+	let input = +inputNum(2)
+	if (a2.includes(input)) {
+		let index = a2.indexOf(input)
+		document.querySelector('.out-2').innerHTML = index
+	} else {
+		document.querySelector('.out-2').innerHTML = false
+	}
 }
 
 // TASK 03
@@ -26,20 +34,38 @@ const f2 = () => {
 // Как тестируется - ввожу числа и проверяю результат.
 
 
-let a3 = [[3,4,5], [6,7,1], [5,6,7,1,12], [134,234,432]];
+let a3 = [[3, 4, 5], [6, 7, 1], [5, 6, 7, 1, 12], [134, 234, 432]];
 
 const f3 = () => {
+	let input = +inputNum(3)
+	for (let i in a3) {
+		if (a3[i].includes(input)) {
+			return document.querySelector('.out-3').innerHTML = true
+		}
+	}
+	return document.querySelector('.out-3').innerHTML = false
 }
 
 // TASK 04
 // По нажатию b-4 выполняется функция f4. Функция считывает значение из i-4 и с помощью includes ищет данный элемент во вложенных массивах массива a4. Выводит в out-4  false, если такого элемента нет и ключ вложенного массива в котором такой элемент есть(если есть). Обратите внимание! Только числа! Если ключей несколько, то выводятся через пробел.
 
 
-let a4 = { a : [1,2,3], b : [3, 1, 5, 8], c : [88, 77, 66]};
+let a4 = { a: [1, 2, 3], b: [3, 1, 5, 8], c: [88, 77, 66] };
 
 const f4 = () => {
-}
+	let input = +inputNum(4)
+	let rez = ''
+	for (let i in a4) {
+		if (a4[i].includes(input)) {
+			rez += i + ' '
+		}
+	}
+	if (rez != '') {
+		return document.querySelector('.out-4').innerHTML = rez
+	}
+	return document.querySelector('.out-4').innerHTML = false
 
+}
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция считывает значение из i-5-1 и индекс с которого начинается поиск в массиве с i-5-2 и с помощью includes  ищет данный элемент в массиве a5 c позиции указанной в i-5-2. Выводит в out-5 false если такого элемента при поиске с указанной позиции нет и true если есть.
 // Введите пары и изучите поведение
@@ -51,7 +77,12 @@ const f4 = () => {
 let a5 = [22, 33, 44, 55, 66, 77, 88, 33, 44, 55, 66, 77];
 
 const f5 = () => {
- 
+	let input = +inputNum('5-1')
+	let index = +inputNum('5-2')
+	if (a5.includes(input, index)) {
+		return document.querySelector('.out-5').innerHTML = true
+	}
+	return document.querySelector('.out-5').innerHTML = false
 }
 
 // TASK 06
@@ -62,6 +93,11 @@ const f5 = () => {
 let a6 = ['Hi', 'wiFI'];
 
 const f6 = () => {
+	let input = inputNum(6)
+	if (a6.includes(input)) {
+		return document.querySelector('.out-6').innerHTML = true
+	}
+	return document.querySelector('.out-6').innerHTML = false
 }
 
 // TASK 07
@@ -71,6 +107,12 @@ const f6 = () => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = (arr, elem) => {
+	for (let val of arr) {
+		if (val === elem) {
+			return document.querySelector('.out-7').innerHTML = true
+		}
+	}
+	return document.querySelector('.out-7').innerHTML = false
 }
 
 // TASK 08
@@ -80,6 +122,11 @@ const f7 = (arr, elem) => {
 let a8 = 'JSbestever';
 
 const f8 = () => {
+	let input = inputNum(8)
+	if (a8.includes(input)) {
+		return document.querySelector('.out-8').innerHTML = true
+	}
+	document.querySelector('.out-8').innerHTML = false
 }
 
 // TASK 09
@@ -92,7 +139,17 @@ const f8 = () => {
 let a9 = ['A', 'b', 'c', 'C', 'D', 12, 5, 'd', 1];
 
 const f9 = () => {
-    console.log('09');
+	let input = inputNum(9)
+	if (a9.includes(input)) {
+		return document.querySelector('.out-9').innerHTML = true
+	} else if (a9.includes(+input)) {
+		return document.querySelector('.out-9').innerHTML = true
+	} else if (a9.includes(input.toUpperCase())) {
+		return document.querySelector('.out-9').innerHTML = true
+	} else {
+		return document.querySelector('.out-9').innerHTML = false
+	}
+
 }
 
 // TASK 10
@@ -101,32 +158,32 @@ const f9 = () => {
 const a10 = [67, '55', 2, 5, '4', '8', 8, '66', '54', 11, NaN];
 
 const f10 = () => {
-    if (a10.indexOf(NaN) !== -1) {
-        // не выполнится
-        console.log('Сработал indexOf');
-    }
+	if (a10.indexOf(NaN) !== -1) {
+		// не выполнится
+		console.log('Сработал indexOf');
+	}
 
-    if (a10.includes(NaN)) {
-        // выполнится
-        console.log('Сработал includes');
-    }
+	if (a10.includes(NaN)) {
+		// выполнится
+		console.log('Сработал includes');
+	}
 }
 
 // TASK 11
 // Ну и на прокачку ваших скиллов. Выполните код ниже. Изучите консоль. По очереди расскоментируйте строки  и смотрите на результат. Проанализируйте.
 
-const a11 = [[1,2] , {a : 1}, true, '', [1], Infinity, undefined, null];
+const a11 = [[1, 2], { a: 1 }, true, '', [1], Infinity, undefined, null];
 
 const f11 = () => {
-    let c = [1,2];
-    // c = {a:1};
-    // c = true;
-    // c = '';
-    // c = [1];
-    // c = Infinity;
-    // c = undefined;
-    // c = null;
-    console.log(a11.includes(c));
+	let c = [1, 2];
+	// c = {a:1};
+	// c = true;
+	// c = '';
+	// c = [1];
+	// c = Infinity;
+	// c = undefined;
+	// c = null;
+	console.log(a11.includes(c));
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
@@ -135,10 +192,10 @@ document.querySelector('.b-3').addEventListener('click', f3);
 document.querySelector('.b-4').addEventListener('click', f4);
 document.querySelector('.b-5').addEventListener('click', f5);
 document.querySelector('.b-6').addEventListener('click', f6);
-document.querySelector('.b-7').addEventListener('click', ()=>{
-    f7(a7, 23);
+document.querySelector('.b-7').addEventListener('click', () => {
+	f7(a7, 23);
 });
 document.querySelector('.b-8').addEventListener('click', f8);
 document.querySelector('.b-9').addEventListener('click', f9);
-document.querySelector('.b-10').addEventListener('click',f10);
-document.querySelector('.b-11').addEventListener('click',f11);
+document.querySelector('.b-10').addEventListener('click', f10);
+document.querySelector('.b-11').addEventListener('click', f11);
