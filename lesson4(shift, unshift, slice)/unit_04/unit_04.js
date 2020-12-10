@@ -64,8 +64,13 @@ const f5 = () => {
 
 let a6 = ['a', 'b', 'c', 'd', 'e', 'f'];
 
-const f6 = (elem) => {
 
+const f6 = (elem) => {
+	let mas = []
+	mas[0] = elem
+	let rez = mas.concat(a6)
+	a6 = rez
+	return a6.length
 }
 
 // TASK 07
@@ -74,7 +79,9 @@ const f6 = (elem) => {
 let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = () => {
-
+	a7.shift()
+	console.log(a7)
+	return a7.length
 }
 
 // TASK 08
@@ -84,6 +91,8 @@ const f7 = () => {
 let a8 = [44, 45, 46, 47, 48, 49];
 
 const f8 = () => {
+
+	console.log(a8.slice(1, 4))
 }
 
 // TASK 09
@@ -92,6 +101,7 @@ const f8 = () => {
 let a9 = ['A', 2, 43, 12, 13, 14, 15, 16];
 
 const f9 = () => {
+	console.log(a9.slice(2))
 }
 
 // TASK 10
@@ -100,7 +110,7 @@ const f9 = () => {
 const a10 = [100, 2, 43, 12, 13, 14, 15, 16];
 
 const f10 = () => {
-
+	console.log(a10.slice(2, -2))
 }
 
 
@@ -121,4 +131,4 @@ document.querySelector('.b-7').addEventListener('click', () => {
 });
 document.querySelector('.b-8').addEventListener('click', f8);
 document.querySelector('.b-9').addEventListener('click', f9);
-document.querySelector('.b-10').addEventListener('click', f10());
+document.querySelector('.b-10').addEventListener('click', f10);
