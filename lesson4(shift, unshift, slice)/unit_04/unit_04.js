@@ -46,7 +46,8 @@ const f3 = () => {
 let a4 = [14, 15, 16, 17, 18];
 
 const f4 = () => {
-
+	a4.shift()
+	console.log(a4)
 }
 
 // TASK 05
