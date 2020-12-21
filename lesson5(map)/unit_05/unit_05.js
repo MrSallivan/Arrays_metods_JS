@@ -72,7 +72,11 @@ let a5 = [55, 66, 77];
 let a5_res;
 
 const f5 = () => {
-
+	a5_res = a5.map((item, index) => {
+		return index
+	})
+	console.log(a5_res)
+	console.log(a5)
 }
 
 // TASK 06
@@ -86,7 +90,11 @@ a6[6] = 3;
 let a6_res;
 
 const f6 = () => {
-
+	a6_res = a6.map((item, index) => {
+		return index
+	})
+	console.log(a6_res)
+	console.log(a6)
 }
 
 // TASK 07
@@ -96,7 +104,11 @@ let a7 = [[22, 13, 45], [5, 2], [5, 3, 6, 7, 9]];
 let a7_res;
 
 const f7 = () => {
-
+	a7_res = a7.map(item => {
+		return item.length
+	})
+	console.log(a7_res)
+	console.log(a7)
 }
 
 // TASK 08
@@ -106,7 +118,16 @@ let a8 = [[22, 13, 45], [5, 2], [5, 3, 6, 7, 9]];
 let a8_res;
 
 const f8 = () => {
+	a8_res = a8.map(item => {
+		let sum = 0
+		for (let i of item) {
+			sum += i
+		}
+		return sum
+	})
 
+	console.log(a8_res)
+	console.log(a8)
 }
 
 // TASK 09
