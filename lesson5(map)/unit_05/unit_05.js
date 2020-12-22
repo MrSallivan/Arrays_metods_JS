@@ -138,14 +138,23 @@ let a9_index;
 let a9_even;
 
 const f9 = () => {
-	a9_even = a9.map((item, index) => {
+	even = a9.map(item => {
 		if (item % 2 == 0) {
 			return item
 		}
 	})
+	for (let i = 0; i < even.length; i++) {
+		if (even[i] === undefined) {
+			even.splice(i, 1)
+			i--
+		}
+	}
+	a9_even = even
+
 	a9_index = a9.map((item, index) => {
 		return index
 	})
+
 	console.log(a9_even)
 	console.log(a9_index)
 }
