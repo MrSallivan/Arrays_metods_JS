@@ -166,13 +166,15 @@ let a10 = [2, 3, 4, 5, 6, 7];
 let a10_res;
 
 const f10 = (arr, fc) => {
-
-	// return ...
+	a10_res = []
+	for (let i of arr) {
+		a10_res.push(fc(i))
+	}
+	return a10_res
 }
 
 function callback10(elem) {
-	// ваш код
-	// return
+	return elem * 2
 }
 
 
