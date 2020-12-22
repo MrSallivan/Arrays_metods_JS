@@ -6,7 +6,12 @@ let a1 = [5, 6, 7, 8, 44, 21, 43, 26, 78, 100, -2, 0, 17];
 let z1 = [];
 
 const f1 = () => {
-
+	z1 = a1.filter(item => {
+		if (item % 2 == 0) {
+			return true
+		}
+	})
+	console.log(z1)
 }
 
 // TASK 02
@@ -16,7 +21,12 @@ let a2 = [22, 33, 44, 55, 66, 77, 88, 99];
 let z2 = [];
 
 const f2 = () => {
-
+	z2 = a2.filter((item, index) => {
+		if (index % 2 == 0) {
+			return true
+		}
+	})
+	console.log(z2)
 }
 
 // TASK 03
@@ -65,11 +75,11 @@ const f6 = () => {
 // По нажатию b-7 выполняется функция f7. Функция перебирает с помощью filter массив a7 и добавляет в z7 те объекты, пароль которых меньше или равен 6 символов. Результат выводится в консоль.
 
 let a7 = [
-    { "user": "poprik", "pass": "a8b5442b9c" },
-    { "user": "dobrik", "pass": "9665" },
-    { "user": "kovrik", "pass": "DA06aA" },
-    { "user": "shurik", "pass": "71b" },
-    { "user": "zorik", "pass": "362617b302" }
+	{ "user": "poprik", "pass": "a8b5442b9c" },
+	{ "user": "dobrik", "pass": "9665" },
+	{ "user": "kovrik", "pass": "DA06aA" },
+	{ "user": "shurik", "pass": "71b" },
+	{ "user": "zorik", "pass": "362617b302" }
 ];
 let z7 = [];
 
@@ -108,8 +118,8 @@ const f10 = () => {
 }
 
 function callback10(elem) {
-    // ваш код
-    // return
+	// ваш код
+	// return
 }
 
 
