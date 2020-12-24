@@ -56,7 +56,12 @@ let a4 = [3, -2, 4, 1, '9', -3, '0', true, 2, -8, undefined];
 let z4 = [];
 
 const f4 = () => {
-
+	z4 = a4.filter(item => {
+		if (typeof (item) != "number") {
+			return true
+		}
+	})
+	console.log(z4)
 }
 
 // TASK 05
@@ -66,7 +71,12 @@ let a5 = [[4, 5], [6, 7, 8], [12, 5], [47, 3, 54, 62], [5]]; // ожидаю [[4
 let z5 = [];
 
 const f5 = () => {
-
+	z5 = a5.filter(item => {
+		if (item.includes(5)) {
+			return true
+		}
+	})
+	console.log(z5)
 }
 
 // TASK 06
@@ -76,7 +86,17 @@ let a6 = [[4, 5], [6, 7, 3], [12, 5], [47, 3, 54, 62], [5]]; // ожидаю [[6
 let z6 = [];
 
 const f6 = () => {
+	z6 = a6.filter(item => {
+		let sum = 0
+		for (let i of item) {
+			sum += i
+		}
+		if (sum % 2 == 0) {
+			return true
+		}
 
+	})
+	console.log(z6)
 }
 
 // TASK 07
@@ -92,7 +112,13 @@ let a7 = [
 let z7 = [];
 
 const f7 = () => {
-
+	z7 = a7.filter(item => {
+		let passLen = item['pass'].length
+		if (passLen <= 6) {
+			return true
+		}
+	})
+	console.log(z7)
 }
 
 // TASK 08
@@ -103,7 +129,15 @@ let z8 = [];
 let z8_2 = [];
 
 const f8 = () => {
-
+	z8 = a8.filter(item => {
+		if (item % 2 == 0) {
+			return true
+		} else {
+			z8_2.push(item)
+		}
+	})
+	console.log(z8)
+	console.log(z8_2)
 }
 
 // TASK 09
@@ -113,6 +147,11 @@ let a9 = [6, 7, 9];
 let z9 = {}; // {6 : 6, 7: 7, 9: 9}
 
 const f9 = () => {
+	for (let i of a9) {
+		z9[i] = i
+	}
+
+	console.log(z9)
 }
 
 // TASK 10
@@ -121,13 +160,21 @@ const f9 = () => {
 let a10 = { "hi": 5, "test": 2, "best": 12, "quest": -6 };
 let z10 = {}; // ожидаю {"best" : 12, "quest" : -6};
 
-const f10 = () => {
+const f10 = (obj, callback10) => {
+	for (let i in obj) {
+		if (callback10(obj[i]) != undefined) {
+			z10[i] = callback10(obj[i])
+		}
 
+	}
+	return z10
 }
 
 function callback10(elem) {
-	// ваш код
-	// return
+	if (Math.abs(elem) > 5) {
+
+		return elem
+	}
 }
 
 
@@ -140,4 +187,6 @@ document.querySelector('.b-6').addEventListener('click', f6);
 document.querySelector('.b-7').addEventListener('click', f7);
 document.querySelector('.b-8').addEventListener('click', f8);
 document.querySelector('.b-9').addEventListener('click', f9);
-document.querySelector('.b-10').addEventListener('click', f10);
+document.querySelector('.b-10').addEventListener('click', () => {
+	console.log(f10(a10, callback10))
+});
