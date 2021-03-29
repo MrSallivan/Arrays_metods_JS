@@ -87,7 +87,14 @@ const f6 = () => {
 let a7 = [3, -4, 5, -6, 7]; // результат 15
 
 const f7 = () => {
-	// let res = a7.reduce((accum, item) => {
+	let res = a7.reduce((accum, item) => {
+		if (item > 0 ) {
+			return accum + item
+		} else {
+			return accum
+		}
+	}, 0)
+	document.querySelector('.out-7').innerHTML = res
 }
 
 // TASK 08
