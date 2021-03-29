@@ -19,6 +19,11 @@ let a2 = [22, 33, 44, 55, 66, 77, 88, 99];
 
 const f2 = () => {
 
+	if ((a2.size === undefined) && (typeof (a2) !== 'string') && (a2.length >= 0)) {
+		document.querySelector('.out-2').innerHTML = true
+	} else {
+		document.querySelector('.out-2').innerHTML = false
+	}
 }
 
 // TASK 03
