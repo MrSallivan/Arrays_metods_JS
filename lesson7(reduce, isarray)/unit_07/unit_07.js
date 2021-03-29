@@ -55,6 +55,7 @@ const f4 = () => {
 		console.log('==============');
 		return item;
 	});
+	
 }
 
 // TASK 05
@@ -63,9 +64,11 @@ const f4 = () => {
 let a5 = [2, 3, 4, 5, 6];
 
 const f5 = () => {
-	// let res = a5.reduce((accum, item) => {
+	let res = a5.reduce((accum, item) => {
+		return accum + item
+	})
+	document.querySelector('.out-5').innerHTML = res
 }
-
 // TASK 06
 // По нажатию b-6 выполняется функция f6. Функция перебирает с помощью reduce массив и перемножает все его элементы. Обратите внимание на область применения reduce - везде где нужно в результате получить одно число на основе массива - reduce подойдет. Результат - произведение элементов массива выводится в out-6.
 
