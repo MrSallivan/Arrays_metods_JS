@@ -75,7 +75,10 @@ const f5 = () => {
 let a6 = [2, 3, 4];
 
 const f6 = () => {
-	// let res = a6.reduce((accum, item) => {
+	let res = a6.reduce((accum, item) => {
+		return accum * item
+	})
+	document.querySelector('.out-6').innerHTML = res
 }
 
 // TASK 07
