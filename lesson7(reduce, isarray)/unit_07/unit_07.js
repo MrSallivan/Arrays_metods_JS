@@ -55,7 +55,7 @@ const f4 = () => {
 		console.log('==============');
 		return item;
 	});
-	
+
 }
 
 // TASK 05
@@ -88,12 +88,12 @@ let a7 = [3, -4, 5, -6, 7]; // результат 15
 
 const f7 = () => {
 	let res = a7.reduce((accum, item) => {
-		if (item > 0 ) {
+		if (item > 0) {
 			return accum + item
 		} else {
 			return accum
 		}
-	}, 0)
+	})
 	document.querySelector('.out-7').innerHTML = res
 }
 
@@ -103,7 +103,14 @@ const f7 = () => {
 let a8 = [-2, 3, -4, 5, -6, 7]; // результат 15
 
 const f8 = () => {
-	// let res = a8.reduce((accum, item) => {
+	let res = a8.reduce((accum, item) => {
+		if (item > 0) {
+			return accum + item
+		} else {
+			return accum
+		}
+	}, 0)
+	document.querySelector('.out-8').innerHTML = res
 }
 
 // TASK 09
@@ -112,6 +119,14 @@ const f8 = () => {
 let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 
 const f9 = () => {
+	let rez = a9.reduce((acc, item) => {
+		if (item > 0) {
+			return acc * item
+		} else {
+			return acc
+		}
+	},)
+	document.querySelector('.out-9').innerHTML = rez
 }
 
 // TASK 10
@@ -120,7 +135,17 @@ const f9 = () => {
 let a10 = [-2, 3, -4, 5, -6, 7];  // [15,-12]
 
 const f10 = () => {
-	// let res = a10.reduce( (accum, item) => {
+	let res = a10.reduce( (accum, item) => {
+		let mas = []
+		if (item > 0) {
+			mas[0] = accum + item
+		} 
+		if (item < 0 ) {
+			mas[1] = accum + item
+		} 
+		return mas
+	})
+
 	document.querySelector('.out-10').innerHTML = res;
 }
 
