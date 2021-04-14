@@ -122,10 +122,8 @@ const f9 = () => {
 	let rez = a9.reduce((acc, item) => {
 		if (item > 0) {
 			return acc * item
-		} else {
-			return acc
 		}
-	},)
+	}, 1)
 	document.querySelector('.out-9').innerHTML = rez
 }
 
@@ -135,17 +133,16 @@ const f9 = () => {
 let a10 = [-2, 3, -4, 5, -6, 7];  // [15,-12]
 
 const f10 = () => {
-	let res = a10.reduce( (accum, item) => {
-		let mas = []
+	let res = a10.reduce((accum, item) => {
 		if (item > 0) {
-			mas[0] = accum + item
-		} 
-		if (item < 0 ) {
-			mas[1] = accum + item
-		} 
-		return mas
-	})
-
+			accum[0] = accum[0] + item
+		}
+		if (item < 0) {
+			accum[1] = accum[1] + item
+		}
+		return accum
+	}, [0, 0])
+	console.log(res)
 	document.querySelector('.out-10').innerHTML = res;
 }
 
@@ -155,7 +152,16 @@ const f10 = () => {
 let a11 = [-2, 3, 14, 5, -6, 7];  // 14
 
 const f11 = () => {
-	// let res = a11.reduce((accum, item) => {
+	let res = a11.reduce((accum, item) => {
+		if (accum > item) {
+			return accum
+		} else {
+			return item
+		}
+
+	})
+	console.log(res)
+	document.querySelector('.out-11').innerHTML = res;
 }
 
 // TASK 12
