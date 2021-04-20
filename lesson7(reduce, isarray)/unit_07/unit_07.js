@@ -121,8 +121,9 @@ let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 const f9 = () => {
 	let rez = a9.reduce((acc, item) => {
 		if (item > 0) {
-			return acc * item
+			acc *= item
 		}
+		return acc
 	}, 1)
 	document.querySelector('.out-9').innerHTML = rez
 }
@@ -170,8 +171,15 @@ const f11 = () => {
 let a12 = [-2, 3, 14, 15, -6, 7];
 
 const f12 = () => {
-	// let res = a12.reduce(
-	document.querySelector('.out-12').innerHTML = res;
+	let res = a12.reduce((accum, item) => {
+		if (accum > item) {
+			return accum
+		} else {
+			return item
+		}
+	})
+
+	document.querySelector('.out-12').innerHTML = a12.indexOf(res);
 }
 
 // TASK 13
@@ -180,7 +188,14 @@ const f12 = () => {
 let a13 = [[4, 4, 4], [4, 4], [4, 4, 4, 4], [4], [4, 4]];
 
 const f13 = () => {
-	// let res = a13.reduce((accum, item) => 
+	let res = a14.reduce((acc, item) => {
+		if (acc.length > item.length) {
+			return acc
+		} else {
+			return item
+		}
+	})
+	document.querySelector('.out-13').innerHTML = res.length;
 }
 
 // TASK 14
@@ -189,7 +204,13 @@ const f13 = () => {
 let a14 = [[4, 4, 4], [4, 4], [4, 4, 4, 4], [4], [4, 4]];
 
 const f14 = () => {
-	// let res = 
+	let res = a14.reduce((acc, item) => {
+		if (acc.length > item.length) {
+			return acc
+		} else {
+			return item
+		}
+	})
 	document.querySelector('.out-14').innerHTML = res;
 }
 
@@ -199,7 +220,10 @@ const f14 = () => {
 let a15 = [0, 0, 1, 1, 1, 0, 2, 2, 3, 3, 3, 4, 5, 5, 6, 4, 4, 3, 1, 1, 0, 0, -1];
 
 const f15 = () => {
-	// let res = a15.reduce((accum, item) => 
+	let res = a15.reduce((accum, item) => {
+		return accum + item
+	}) / a15.length
+
 	document.querySelector('.out-15').innerHTML = res;
 }
 
@@ -215,7 +239,11 @@ let a16 = [
 // Ожидаю объект вида  { 45 : "Ivar", 464 : "Astor", 17 : "Bristol" }
 
 const f16 = () => {
+	let res = a16.reduce((accum, item) => {
+		for (let item of a16) {
 
+		}
+	}, {})
 }
 
 // TASK 17
