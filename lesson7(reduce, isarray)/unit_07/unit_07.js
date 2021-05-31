@@ -239,10 +239,19 @@ let a16 = [
 // Ожидаю объект вида  { 45 : "Ivar", 464 : "Astor", 17 : "Bristol" }
 
 const f16 = () => {
+
 	let res = a16.reduce((accum, item) => {
-		return accum[`${item.id}`] = `${item.name}`
-	}, 0)
-	console.log(res)
+		accum[item.id] = item['name']
+		return accum
+	}, {})
+
+	let out = ''
+
+	for (let key in res) {
+		out += key+' '+res[key] + '<br>'
+	}
+
+	document.querySelector('.out-16').innerHTML = out
 }
 
 // TASK 17
