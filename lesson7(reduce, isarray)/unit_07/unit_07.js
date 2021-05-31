@@ -240,10 +240,9 @@ let a16 = [
 
 const f16 = () => {
 	let res = a16.reduce((accum, item) => {
-		for (let item of a16) {
-
-		}
-	}, {})
+		return accum[`${item.id}`] = `${item.name}`
+	}, 0)
+	console.log(res)
 }
 
 // TASK 17
