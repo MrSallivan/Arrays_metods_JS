@@ -266,7 +266,14 @@ let a17 = {
 let a17_res = [];
 
 const f17 = () => {
-
+	for (let key in a17) {
+		a17_res.push(a17[key])
+	}
+	document.querySelector('.out-17').innerHTML = a17_res.reduce((accum, item) => {
+		return accum += item + ' '
+	}, '')
+	
+	
 }
 
 // TASK 18
