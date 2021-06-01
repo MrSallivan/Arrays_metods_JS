@@ -273,7 +273,6 @@ const f17 = () => {
 		return accum += item + ' '
 	}, '')
 	
-	
 }
 
 // TASK 18
@@ -284,7 +283,9 @@ a18[100] = 67;
 a18[2000] = 15;
 
 const f18 = () => {
-	// let res = a18.reduce((accum, item, index) => 
+	document.querySelector('.out-18').innerHTML = a18.reduce((accum, item, index) => {
+		return accum += index + ' ' + item + '<br>'
+	}, '')
 }
 
 // TASK 19
