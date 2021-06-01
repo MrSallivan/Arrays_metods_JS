@@ -294,8 +294,8 @@ const f18 = () => {
 let a19 = 'hello';
 
 const f19 = () => {
-	// let res = a19.split('').reduce((accum, item) 
-	// document.querySelector('.out-19').innerHTML = res;
+	let res = a19.split('').reduce((accum, item, index) => accum += index + ' ' + item + '<br>', '')
+	document.querySelector('.out-19').innerHTML = res;
 }
 
 // TASK 20
