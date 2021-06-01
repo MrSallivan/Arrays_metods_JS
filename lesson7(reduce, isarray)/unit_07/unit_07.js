@@ -304,8 +304,14 @@ const f19 = () => {
 let a20 = [4, 5, 6];
 
 const f20 = () => {
-	// let res = a19.split('').reduce((accum, item) => {
-	// res = [6,5,4]
+
+	let res = a20.reduce((accum, item) => {
+		accum.unshift(item)
+		return accum
+	}, [])
+
+	document.querySelector('.out-20').innerHTML = res.join(' ')
+	
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
