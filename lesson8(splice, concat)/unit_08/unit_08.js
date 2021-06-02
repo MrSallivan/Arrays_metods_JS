@@ -45,6 +45,8 @@ let a4_1 = 'prime';
 let a4_res;
 
 const f4 = () => {
+	a4_res = a4.concat(a4_1)
+	document.querySelector('.out-4').innerHTML = a4_res
 }
 
 // TASK 05
