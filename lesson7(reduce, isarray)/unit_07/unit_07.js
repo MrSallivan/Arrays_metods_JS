@@ -239,10 +239,19 @@ let a16 = [
 // Ожидаю объект вида  { 45 : "Ivar", 464 : "Astor", 17 : "Bristol" }
 
 const f16 = () => {
+
 	let res = a16.reduce((accum, item) => {
-		return accum[`${item.id}`] = `${item.name}`
-	}, 0)
-	console.log(res)
+		accum[item.id] = item['name']
+		return accum
+	}, {})
+
+	let out = ''
+
+	for (let key in res) {
+		out += key+' '+res[key] + '<br>'
+	}
+
+	document.querySelector('.out-16').innerHTML = out
 }
 
 // TASK 17
@@ -257,7 +266,13 @@ let a17 = {
 let a17_res = [];
 
 const f17 = () => {
-
+	for (let key in a17) {
+		a17_res.push(a17[key])
+	}
+	document.querySelector('.out-17').innerHTML = a17_res.reduce((accum, item) => {
+		return accum += item + ' '
+	}, '')
+	
 }
 
 // TASK 18
@@ -268,7 +283,9 @@ a18[100] = 67;
 a18[2000] = 15;
 
 const f18 = () => {
-	// let res = a18.reduce((accum, item, index) => 
+	document.querySelector('.out-18').innerHTML = a18.reduce((accum, item, index) => {
+		return accum += index + ' ' + item + '<br>'
+	}, '')
 }
 
 // TASK 19
@@ -277,8 +294,8 @@ const f18 = () => {
 let a19 = 'hello';
 
 const f19 = () => {
-	// let res = a19.split('').reduce((accum, item) 
-	// document.querySelector('.out-19').innerHTML = res;
+	let res = a19.split('').reduce((accum, item, index) => accum += index + ' ' + item + '<br>', '')
+	document.querySelector('.out-19').innerHTML = res;
 }
 
 // TASK 20
@@ -287,8 +304,14 @@ const f19 = () => {
 let a20 = [4, 5, 6];
 
 const f20 = () => {
-	// let res = a19.split('').reduce((accum, item) => {
-	// res = [6,5,4]
+
+	let res = a20.reduce((accum, item) => {
+		accum.unshift(item)
+		return accum
+	}, [])
+
+	document.querySelector('.out-20').innerHTML = res.join(' ')
+	
 }
 
 document.querySelector('.b-1').addEventListener('click', f1);
