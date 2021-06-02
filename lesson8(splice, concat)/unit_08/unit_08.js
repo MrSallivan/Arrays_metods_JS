@@ -32,7 +32,8 @@ let a3_1 = [5, 7];
 let a3_res;
 
 const f3 = () => {
-
+	a3_res = a3.concat(a3_1)
+	document.querySelector('.out-3').innerHTML = a3_res
 }
 
 // TASK 04
