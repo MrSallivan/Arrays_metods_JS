@@ -53,6 +53,14 @@ const f4 = () => {
 // Напишите функцию f5 эмулятор concat. Функция должна принимать два аргумента массива и возвращать новый массив объединенный из этих двух. 
 
 const f5 = (ar1, ar2) => {
+	let res = []
+	for(let i of ar1) {
+		res.push(i)
+	}
+	for (let i of ar2) {
+		res.push(i)
+	}
+	return res
 }
 
 // TASK 06
