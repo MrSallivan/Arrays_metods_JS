@@ -7,6 +7,8 @@ let a1_1 = [55, 66, 77];
 let a1_res;
 
 const f1 = () => {
+	a1_res = a1.concat(a1_1)
+	document.querySelector('.out-1').innerHTML = a1_res.join(' ')
 }
 
 // TASK 02
@@ -17,7 +19,8 @@ let a2_1 = 'best';
 let a2_res;
 
 const f2 = () => {
-
+	a2_res = a2.concat(a2_1)
+	document.querySelector('.out-2').innerHTML = a2_res
 }
 
 // TASK 03
