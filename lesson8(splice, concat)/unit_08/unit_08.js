@@ -68,7 +68,11 @@ const f5 = (ar1, ar2) => {
 
 
 // для примера я написал 1, но тестировать буду с любым количеством
-const f6 = (arg1) => {
+const f6 = (...arg1) => {
+	let res = []
+	res.push(arg1)
+	
+	return res
 }
 
 // TASK 07
@@ -77,6 +81,8 @@ const f6 = (arg1) => {
 let a7 = [3, -4, 5, -6, 7, 45, 67];
 
 const f7 = () => {
+	a7.splice(2, 3)
+	document.querySelector('.out-7').innerHTML = a7.join(' ')
 }
 
 // TASK 08
@@ -87,7 +93,10 @@ n8 = 4;
 k8 = 3;
 
 const f8 = () => {
+	a8.splice(k8, n8)
+	document.querySelector('.out-8').innerHTML = a8.join(' ')
 }
+
 
 // TASK 09
 // По нажатию b-9 выполняется функция f9. Функция перебирает удаляет 3 элемента с начала массива a9 и добавляет элементы 7 и 8 (числа) вместо удаленных. 
