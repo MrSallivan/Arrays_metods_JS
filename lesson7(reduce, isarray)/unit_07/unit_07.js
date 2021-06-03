@@ -188,7 +188,7 @@ const f12 = () => {
 let a13 = [[4, 4, 4], [4, 4], [4, 4, 4, 4], [4], [4, 4]];
 
 const f13 = () => {
-	let res = a14.reduce((acc, item) => {
+	let res = a13.reduce((acc, item) => {
 		if (acc.length > item.length) {
 			return acc
 		} else {
