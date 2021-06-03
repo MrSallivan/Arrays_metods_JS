@@ -104,6 +104,8 @@ const f8 = () => {
 let a9 = [-2, 3, -4, 5, -6, 7]; // 105
 
 const f9 = () => {
+	a9.splice(0, 3, 7, 8)
+	document.querySelector('.out-9').innerHTML = a9.join(' ')
 }
 
 // TASK 10
@@ -116,6 +118,15 @@ let add = [999, 1000]
 
 // что хочу получить в результате работы функции - [-2, 3, 999,1000,  7]
 const f10 = (arr, from, num, add) => {
+	let count = 0
+	for (let i = from; i <= (from + num) - 1; i++) {
+		delete arr[i]
+			if (arr[i] == undefined) {
+				arr[i] = add[count]
+				count = count + 1
+			}	
+	}
+	return arr
 }
 
 
