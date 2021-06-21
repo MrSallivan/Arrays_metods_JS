@@ -155,6 +155,13 @@ let a11 = [0, 4, 22];
 let a10_res = []; // ожидаю [-2, -6];
 
 const f10 = () => {
+	a10_res = []
+	for(let i of a11) {
+		if(a10[i] !== undefined) {
+			a10_res.push(a10[i])
+		}
+	}
+	document.querySelector('.out-10').innerHTML = a10_res.join(' ')
 }
 
 
