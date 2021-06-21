@@ -46,7 +46,7 @@ let a4_res;
 
 const f4 = () => {
 	a4_res = a4.concat(a4_1)
-	document.querySelector('.out-4').innerHTML = a4_res
+	document.querySelector('.out-4').innerHTML = a4_res.join(' ')
 }
 
 // TASK 05
@@ -70,8 +70,7 @@ const f5 = (ar1, ar2) => {
 // для примера я написал 1, но тестировать буду с любым количеством
 const f6 = (...arg1) => {
 	let res = []
-	res.push(arg1)
-	
+	res.push(...arg1)
 	return res
 }
 
