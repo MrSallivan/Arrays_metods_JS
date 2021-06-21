@@ -98,6 +98,19 @@ let a6_from = 23;
 let a6_to = 67;
 
 const f6 = () => {
+	let b6 = [...a6]
+	
+	let res = b6.reverse().findIndex((item, index) => {
+		if (item > a6_from && item < a6_to) {
+			return true
+		}
+	})
+	
+	if (res === -1) {
+		document.querySelector('.out-6').innerHTML = 'false'
+	} else {
+		document.querySelector('.out-6').innerHTML = (b6.length-1) - res
+	}
 }
 
 // TASK 07
@@ -108,6 +121,8 @@ let str7 = 'cccaBCcbBDabBddcCadcDbACacbbCdbBCADBDBdaAdcCd';
 let a7_1 = 'C'; // 43
 
 const f7 = () => {
+	let res = str7.toUpperCase().lastIndexOf(a7_1)
+	document.querySelector('.out-7').innerHTML = res
 }
 
 // TASK 08
@@ -117,6 +132,8 @@ let str8 = 'C#CdABd$d@$Ab!#@#bcAaB@c$D#@AD$A!b#!D!BB@CaAD@###@';
 let a8_1 = 'a'; // 43 ожидаю и на a и на A
 
 const f8 = () => {
+	let res = str8.toUpperCase().lastIndexOf(a8_1.toUpperCase())
+	document.querySelector('.out-8').innerHTML = res
 }
 
 // TASK 09
@@ -126,6 +143,8 @@ let a9 = ['2', '17', '45', '5', '14', '5', '45', '107'];
 let a9_1 = '5'; // ожидаю индекс 5
 
 const f9 = () => {
+	let res = a9.lastIndexOf(a9_1)
+	document.querySelector('.out-9').innerHTML = res
 }
 
 // TASK 10
