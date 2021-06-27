@@ -26,9 +26,22 @@ const f2 = () => {
 
 let a3 = [[44, 55, 66], [77, 88, 99]]; // ожидаю 66 55 44 99 88 77
 
+
 const f3 = () => {
-	a3_res = []
-	
+
+	var a3_res = []
+	for (let i of a3) {
+		a3_res.push(i.reverse())
+	}
+	document.querySelector('.out-3').innerHTML = a3_res
+	// a3_res.splice(0, a3_res.length)
+	a3_res.length = 0
+	console.log(a3_res)
+	console.log(a3)
+	// while (a3_res.length > 0) {
+	// 	a3_res.pop();
+	// }
+
 }
 
 // TASK 04
