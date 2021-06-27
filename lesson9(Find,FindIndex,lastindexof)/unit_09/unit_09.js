@@ -99,17 +99,17 @@ let a6_to = 67;
 
 const f6 = () => {
 	let b6 = [...a6]
-	
+
 	let res = b6.reverse().findIndex((item, index) => {
 		if (item > a6_from && item < a6_to) {
 			return true
 		}
 	})
-	
+
 	if (res === -1) {
 		document.querySelector('.out-6').innerHTML = 'false'
 	} else {
-		document.querySelector('.out-6').innerHTML = (b6.length-1) - res
+		document.querySelector('.out-6').innerHTML = (b6.length - 1) - res
 	}
 }
 
@@ -122,7 +122,12 @@ let a7_1 = 'C'; // 43
 
 const f7 = () => {
 	let res = str7.toUpperCase().lastIndexOf(a7_1)
-	document.querySelector('.out-7').innerHTML = res
+	if (res === -1) {
+		document.querySelector('.out-7').innerHTML = -1
+	} else {
+		document.querySelector('.out-7').innerHTML = res
+	}
+
 }
 
 // TASK 08
@@ -156,8 +161,8 @@ let a10_res = []; // ожидаю [-2, -6];
 
 const f10 = () => {
 	a10_res = []
-	for(let i of a11) {
-		if(a10[i] !== undefined) {
+	for (let i of a11) {
+		if (a10[i] !== undefined) {
 			a10_res.push(a10[i])
 		}
 	}
