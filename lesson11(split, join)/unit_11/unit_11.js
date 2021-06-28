@@ -56,6 +56,7 @@ a5[56] = 56;
 a5[57] = 56;
 
 const f5 = () => {
+    document.querySelector('.out-5').innerHTML = a5.join('=')
 }
 
 // TASK 06 
@@ -66,9 +67,10 @@ let s6 = 'hello';
 let a6_res = [];
 
 const f6 = () => {
+    a6_res = s6.split('')
+    document.querySelector('.out-6').innerHTML = a6_res
+ }
 
-    // document.querySelector('.out-6').innerHTML = result;
-}
 
 // TASK 07
 // По нажатию b-7 выполняется функция f7. Функция с помощью split разделить строку s7 на массив a7_res по элементам. Получать из строки только 3 первых элемента. Один элемент - один символ. Результат вывести в out-7.
@@ -78,7 +80,8 @@ let s7 = 'hello';
 let a7_res = [];
 
 const f7 = () => {
-    // document.querySelector('.out-7').innerHTML = result;
+   a7_res = s7.split('', 3)
+    document.querySelector('.out-7').innerHTML = a7_res
 }
 
 // TASK 08
@@ -88,6 +91,8 @@ let s8 = 'abrikos';
 let a8_res = '';
 
 const f8 = () => {
+    a8_res = s8.split('').reverse().join('')
+    document.querySelector('.out-8').innerHTML = a8_res
 }
 
 // TASK 09
