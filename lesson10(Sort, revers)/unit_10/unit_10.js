@@ -28,20 +28,11 @@ let a3 = [[44, 55, 66], [77, 88, 99]]; // ожидаю 66 55 44 99 88 77
 
 
 const f3 = () => {
-
-	var a3_res = []
+	let a3_res = []
 	for (let i of a3) {
 		a3_res.push(i.reverse())
 	}
-	document.querySelector('.out-3').innerHTML = a3_res
-	// a3_res.splice(0, a3_res.length)
-	a3_res.length = 0
-	console.log(a3_res)
-	console.log(a3)
-	// while (a3_res.length > 0) {
-	// 	a3_res.pop();
-	// }
-
+	document.querySelector('.out-3').innerHTML = a3_res.join(' ')
 }
 
 // TASK 04
@@ -51,7 +42,11 @@ const f3 = () => {
 let a4 = [55, 66, 77, 88, 99];
 
 const f4 = () => {
-
+	let aNch = []
+	a4.forEach( (item) => {
+		aNch.unshift(item)
+	});
+	return aNch
 }
 
 // TASK 05
@@ -60,6 +55,12 @@ const f4 = () => {
 let a5 = [1, 2, 3, 4, 5, 6, 7, 8]; // ожидаю [2, 1, 4, 3, 6, 5, 8, 7]
 
 const f5 = () => {
+	let aNch = []
+	for(let i = 0; i < a5.length; i = i + 2) {
+		aNch.push(a5[i+1])
+		aNch.push(a5[i])
+	}
+	return aNch
 }
 
 // TASK 06
