@@ -102,7 +102,8 @@ let s9 = 'hiall';
 let a9_res = [];
 
 const f9 = () => {
-    // a9_res = [...s9];
+    a9_res = [...s9];
+    document.querySelector('.out-9').innerHTML = a9_res.join(' ')
 }
 
 // TASK 10
