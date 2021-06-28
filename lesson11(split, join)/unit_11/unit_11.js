@@ -114,6 +114,14 @@ let s10 = 'fghijklmnoprsq';
 let a10_res = [];
 
 const f10 = () => {
+    a10_res = [...s10]
+    let rez = a10_res.filter((item)=>{
+        console.log(item)
+        if(item > 'l'){
+            return true
+        }
+    })
+    document.querySelector('.out-10').innerHTML = rez
 }
 
 
