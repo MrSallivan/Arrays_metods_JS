@@ -129,6 +129,14 @@ let a10 = [
 ];
 
 const f10 = () => {
+	a10.sort((a,b)=>{
+		return a.age - b.age
+	})
+	let str = ''
+	for(let i of a10) {
+		str += i.name + ' '
+	}
+	document.querySelector('.out-10').innerHTML = str
 }
 
 
