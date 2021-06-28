@@ -71,6 +71,8 @@ let a6 = [1, 4, 2, 6, 7, 3, 5, 2, 9];
 // a6 = ['hi', 'low', 'lo', 'hihi'];
 
 const f6 = () => {
+	a6.sort()
+	document.querySelector('.out-6').innerHTML = a6.join(' ')
 }
 
 // TASK 07
@@ -80,6 +82,8 @@ const f6 = () => {
 let a7 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f7 = () => {
+	a7.sort()
+	document.querySelector('.out-7').innerHTML = a7.join(' ')
 }
 
 // TASK 08
@@ -88,6 +92,10 @@ const f7 = () => {
 let a8 = [10, 4, 20, 6, 70, 30, 5, 2, 9];
 
 const f8 = () => {
+	a8.sort((a,b)=>{
+		return a-b
+	})
+	document.querySelector('.out-8').innerHTML = a8.join(' ')
 }
 
 // TASK 09
@@ -96,6 +104,13 @@ const f8 = () => {
 let a9 = [9, 9, 45, 3, 1, 83, 50, 6, 5, 35, 8, 4];
 
 const f9 = (s) => {
+	if(s === 'ASC') {
+		return a9.sort((a,b)=>a-b)
+	}
+
+	if(s === 'DESC') {
+	return a9.sort((a,b)=>b-a)
+	}
 }
 
 // TASK 10
