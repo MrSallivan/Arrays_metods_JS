@@ -7,7 +7,7 @@ let a1_from = 7;
 let a1_to = 100;
 
 const f1 = () => {
-	let rez = a1.every(item =>{
+	let rez = a1.every(item => {
 		if (item > a1_from && item < a1_to) {
 			return true
 		}
@@ -52,7 +52,7 @@ const f3 = () => {
 }
 // В задаче 3 для вычисления суммы массива можно использовать вспомогательную доп. функцию которая считает сумму элементов.
 const summa = (arr) => {
-    // return ///
+	// return ///
 }
 
 // TASK 04
@@ -62,23 +62,34 @@ const summa = (arr) => {
 let a4 = [[100, 200], [300, 100, 400], [500, 700, 100, 800]];
 
 const f4 = () => {
-
+	let rez = a4.every(item => {
+		if (item.includes(100)) {
+			return true
+		}
+	})
+	document.querySelector('.out-4').innerHTML = rez
 }
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция с помощью every проверяет, что все совершеннолетние пользователи (больше или равно 16 лет) провели оплату ( pay - true). Результат проверки вывести в out-5. 
 
 let a5 = [
-    { "name": "Akemi", "age": 33, "pay": true },
-    { "name": "Den", "age": 23, "pay": true },
-    { "name": "Eiko", "age": 36, "pay": true },
-    { "name": "Chieko", "age": 41, "pay": true },
-    { "name": "Tadako", "age": 47, "pay": true },
-    { "name": "Tomiko", "age": 15, "pay": false },
-    { "name": "Utano", "age": 56, "pay": true }
+	{ "name": "Akemi", "age": 33, "pay": true },
+	{ "name": "Den", "age": 23, "pay": true },
+	{ "name": "Eiko", "age": 36, "pay": true },
+	{ "name": "Chieko", "age": 41, "pay": true },
+	{ "name": "Tadako", "age": 47, "pay": true },
+	{ "name": "Tomiko", "age": 15, "pay": false },
+	{ "name": "Utano", "age": 56, "pay": true }
 ];
 
 const f5 = () => {
+	let rez = a5.every(item => {
+		if(item.age >= 16 && item.pay === true) {
+			return true
+		}
+	})
+	document.querySelector('.out-5').innerHTML = rez
 }
 
 // TASK 06
@@ -99,13 +110,13 @@ let a7 = [10, 20, 30];
 let a7_from = 5;
 
 const f7 = () => {
-    let res = a7.every((item, index) => {
-        if (index == 2) {
-            a7.push(2);
-        }
-        // тут ваш if....
-    });
-    document.querySelector('.out-7').innerHTML = res;
+	let res = a7.every((item, index) => {
+		if (index == 2) {
+			a7.push(2);
+		}
+		// тут ваш if....
+	});
+	document.querySelector('.out-7').innerHTML = res;
 }
 
 // TASK 08
@@ -120,15 +131,15 @@ const f8 = () => {
 // Напишите функцию f9, которая запускается по кнопке b-9. Функция проверяет массив a9 с помощью some на наличие пользователей с возрастом меньше или равным 16. Результат выводит в out-9.
 
 let a9 = [
-    { "name": "Ivan", "age": 34 },
-    { "name": "Petro", "age": 24 },
-    { "name": "Orest", "age": 45 },
-    { "name": "Virii", "age": 35 },
-    { "name": "Blamo", "age": 47 },
-    { "name": "Vandeya", "age": 27 },
-    { "name": "Inna", "age": 13 },
-    { "name": "Gretta", "age": 25 },
-    { "name": "Brianna", "age": 55 }
+	{ "name": "Ivan", "age": 34 },
+	{ "name": "Petro", "age": 24 },
+	{ "name": "Orest", "age": 45 },
+	{ "name": "Virii", "age": 35 },
+	{ "name": "Blamo", "age": 47 },
+	{ "name": "Vandeya", "age": 27 },
+	{ "name": "Inna", "age": 13 },
+	{ "name": "Gretta", "age": 25 },
+	{ "name": "Brianna", "age": 55 }
 ];
 
 const f9 = () => {
@@ -141,7 +152,7 @@ let a10 = [10, 20, 30, 50, 60];
 let a10_from = 55;
 
 const isBigFrom = num => {
-    // где в качестве num вы передаете a10_from
+	// где в качестве num вы передаете a10_from
 }
 
 const f10 = () => {
