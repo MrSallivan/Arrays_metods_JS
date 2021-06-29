@@ -7,7 +7,12 @@ let a1_from = 7;
 let a1_to = 100;
 
 const f1 = () => {
-
+	let rez = a1.every(item =>{
+		if (item > a1_from && item < a1_to) {
+			return true
+		}
+	})
+	document.querySelector('.out-1').innerHTML = rez
 }
 
 
@@ -19,7 +24,12 @@ let a2_from = 7;
 let a2_to = 100;
 
 const f2 = () => {
-
+	let rez = a2.every(item => {
+		if (item > a2_from && item < a2_to) {
+			return true
+		}
+	})
+	document.querySelector('.out-2').innerHTML = rez
 }
 
 // TASK 03
@@ -29,7 +39,16 @@ const f2 = () => {
 let a3 = [[5, 5, 11], [10, 10, 17]];
 
 const f3 = () => {
-
+	let rez = a3.every(item => {
+		let sum = 0
+		for (let i of item) {
+			sum += i
+		}
+		if (sum > 20) {
+			return true
+		}
+	})
+	document.querySelector('.out-3').innerHTML = rez
 }
 // В задаче 3 для вычисления суммы массива можно использовать вспомогательную доп. функцию которая считает сумму элементов.
 const summa = (arr) => {
