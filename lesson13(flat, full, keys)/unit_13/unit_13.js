@@ -90,6 +90,8 @@ a8[200] = 300;
 let a8_res = [];
 
 const f8 = () => {
+	a8_res = Object.keys(a8)
+	document.querySelector('.out-8').innerHTML = a8_res.join(' ')
 }
 
 // TASK 09
@@ -105,7 +107,8 @@ let a9 = {
 let a9_res = [];
 
 const f9 = () => {
-
+	a9_res = Object.keys(a9)
+	document.querySelector('.out-9').innerHTML = a9_res.join(' ')
 }
 
 // TASK 10
@@ -119,6 +122,12 @@ a10[200] = 300;
 let a10_res = [];
 
 const f10 = () => {
+	for(let i in a10){
+		if(i !== undefined){
+			a10_res.push(i)
+		}
+	}
+	document.querySelector('.out-10').innerHTML = a10_res.join(' ')
 }
 
 
